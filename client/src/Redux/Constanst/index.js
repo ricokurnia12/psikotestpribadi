@@ -1,0 +1,1 @@
+export const FETCH_ALL_SOAL_DISC = "FETCH_ALL_SOAL_DISC";

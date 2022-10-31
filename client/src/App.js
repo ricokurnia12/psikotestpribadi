@@ -1,5 +1,11 @@
+import Router from "./Routes";
+
 function App() {
-    return <div>Ini App</div>;
+    return (
+        <div>
+            <Router />
+        </div>
+    );
 }
 
 export default App;
