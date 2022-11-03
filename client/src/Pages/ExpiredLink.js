@@ -1,5 +1,4 @@
 import React from "react";
-
 import expiredlinksvg from "../Assets/expiredlink.svg";
 import "./ExpiredLink.css";
 
