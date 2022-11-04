@@ -1,0 +1,54 @@
+.bgg .peoplesubmit {
+    opacity: 50%;
+    height: 70vh;
+    width: 65vh;
+}
+
+.Jawabantersimpan {
+    border-radius: 10px;
+    background-color: #cb243e;
+    /* width: 50vw; */
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 40vw;
+    height: 25vw;
+    max-width: 491px;
+    max-height: 308px;
+    color: white;
+    text-align: center;
+    vertical-align:middle;
+    /* box-sizing: border-box; */
+    padding-top: 30px;
+    min-height: 270px;
+
+    
+    
+    
+
+    
+}
+
+
+@media only screen and (max-width: 700px) {
+    .bgg .peoplesubmit {
+        opacity: 50%;
+        height: 70vh;
+        width: 50vh;
+    }
+
+    .Jawabantersimpan {
+        border-radius: 10px;
+        width: 90vw;
+        margin-top: 10px;
+        min-height: 210px;
+
+        
+
+        margin-left: 50px;
+        margin-right: 50px;
+        color: white;
+        /* padding-top: 5vw; */
+        padding: 20px ;
+        /* min-height: 0px; */
+    }
+}
