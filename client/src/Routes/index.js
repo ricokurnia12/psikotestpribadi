@@ -6,6 +6,7 @@ import TesDisc from "../Pages/user/TesDisc";
 import ExpiredLink from "../Pages/ExpiredLink";
 import FinishSubmitTest from "../Pages/FinishSubmitTest";
 import Start from "../Pages/user/Start";
+import LevelJabatan from "../Pages/LevelJabatan";
 
 const Router = () => {
     return (
@@ -18,6 +19,10 @@ const Router = () => {
                 element={<FinishSubmitTest />}
             />
             <Route path={"/start"} element={<Start />} />
+            <Route
+                path={"/level_jabatan"}
+                element={<LevelJabatan />}
+            />
         </Routes>
     );
 };
