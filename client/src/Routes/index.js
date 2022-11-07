@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import TesDisc from "../Pages/user/TesDisc";
 import ExpiredLink from "../Pages/ExpiredLink";
 import FinishSubmitTest from "../Pages/FinishSubmitTest";
+import Start from "../Pages/user/Start";
 
 const Router = () => {
     return (
@@ -16,6 +17,7 @@ const Router = () => {
                 path={`/finish_submit_test`}
                 element={<FinishSubmitTest />}
             />
+            <Route path={"/start"} element={<Start />} />
         </Routes>
     );
 };

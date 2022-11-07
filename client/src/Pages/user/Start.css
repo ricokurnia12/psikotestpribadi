@@ -1,0 +1,149 @@
+.containerstartpage {
+    margin-right: -50px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: fixed;
+}
+
+.buttonmulai {
+    background-color: #ffcc2a;
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+    width: 2%;
+    max-width: 200px;
+    /* max-height: 40px; */
+    padding: 5px;
+    font-weight: 1000;
+    font-size: 150%;
+}
+
+.buttonmulai:hover {
+    background-color: rgb(255, 196, 0);
+}
+.start {
+    padding-top: 19vh;
+    width: 1000vw;
+    padding-left: 18vw;
+    position: absolute;
+    display: inline-block;
+}
+
+.start p {
+    padding-top: 10px;
+    /* font-size: xx-large; */
+    font-size: 3vw;
+}
+
+.start h1 {
+    /* font-size: 300%; */
+    font-size: 4vw;
+    font-weight: 1000;
+}
+
+.bgstartpage {
+    display: inline-block;
+    margin-left: 58vw;
+    margin-top: 17vh;
+    /* margin-right: -10px; */
+    overflow: hidden;
+    /* position:relative; */
+}
+.gambarstartpage {
+    /* position: absolute; */
+    /* position: absolute; */
+    width: 80%;
+    height: 60%;
+    overflow: hidden;
+
+    /* margin-right: 45px; */
+    /* max-height: 475px; */
+    /* display: inline-block; */
+
+    margin-top: 0px;
+    /* z-index:inherit; */
+
+    /* left: 710px;
+    top: 228px; */
+}
+
+@media only screen and (max-width: 700px) {
+    .buttonmulai {
+        background-color: #ffcc2a;
+        border-radius: 8px;
+        border: none;
+        margin-top: 0px;
+        width: 2%;
+        max-width: 60px;
+
+        padding: 5px;
+        font-weight: 1000;
+        font-size: 50%;
+    }
+    .start {
+        padding-top: 20vh;
+        width: 1000vw;
+        padding-left: 15vw;
+        position: absolute;
+        display: inline-block;
+    }
+
+    .start p {
+        padding-top: 10px;
+        /* font-size: xx-large; */
+        font-size: 3vw;
+    }
+
+    .start h1 {
+        /* font-size: 300%; */
+        font-size: 4vw;
+        font-weight: 1000;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .buttonmulai {
+        background-color: #ffcc2a;
+        border-radius: 8px;
+        border: none;
+        margin-top: 0px;
+        width: 20vw;
+        max-width: 100px;
+
+        padding: 2vw;
+        font-weight: 1000;
+        font-size: 3vw;
+    }
+    .start {
+        padding-top: 18vh;
+        width: 1000vw;
+        padding-left: 10vw;
+        /* text-align: center; */
+    }
+
+    .start p {
+        padding-top: 10px;
+        /* font-size: xx-large; */
+        font-size: 8vw;
+    }
+
+    .start h1 {
+        /* font-size: 300%; */
+        font-size: 8vw;
+        font-weight: 1000;
+    }
+
+    .bgstartpage {
+        /* display: inline-block; */
+        margin-left: 50vw;
+        margin-top: 15vh;
+        /*margin-right: -10px*/
+    }
+
+    .gambarstartpage {
+        width: 80vw;
+        height: 50vh;
+        margin-top: 0px;
+        content: ;
+    }
+}
