@@ -7,6 +7,7 @@ import ExpiredLink from "../Pages/ExpiredLink";
 import FinishSubmitTest from "../Pages/FinishSubmitTest";
 import Start from "../Pages/user/Start";
 import LevelJabatan from "../Pages/LevelJabatan";
+import TesMbti from "../Pages/user/TesMbti";
 
 const Router = () => {
     return (
@@ -23,6 +24,7 @@ const Router = () => {
                 path={"/level_jabatan"}
                 element={<LevelJabatan />}
             />
+            <Route path={`/tes_mbti/:token`} element={<TesMbti />} />
         </Routes>
     );
 };
