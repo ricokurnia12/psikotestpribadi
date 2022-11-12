@@ -1,0 +1,100 @@
+.containerlevel {
+    position: relative;
+    margin-top: 20vh;
+    margin-left: 50px;
+    margin-right: 40px;
+
+    padding-right: 0px;
+}
+
+.containerlevel .bg {
+    width: 28vw;
+    height: 30vw;
+    margin-left: 100px;
+    margin-top: 0vh;
+}
+
+.selectlevel {
+    margin-top: 10%;
+    width: 60%;
+}
+
+.selectlevel p {
+    font-weight: bolder;
+    font-size: 2vw;
+}
+
+#submitlevel {
+    margin-top: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #ffd341;
+    width: 13vw;
+    max-width: 134px;
+    border-color: azure;
+    font-size: ;
+    color: rgb(29, 21, 21);
+}
+
+#submitlevel:hover {
+    margin-top: 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: rgb(214, 165, 2);
+    width: 14vw;
+    max-width: 150px;
+    border-color: azure;
+    font-size: ;
+}
+
+@media only screen and (max-width: 600px) {
+    .containerlevel {
+        display: none;
+    }
+
+    .selectlevelhpscreen {
+        margin: 30px;
+        margin-top: 90px;
+    }
+
+    .btnlevel{
+        text-align: center;
+        margin-right: 7vw;
+    }
+
+.btnlevel .btn {
+        margin: auto;
+        margin-top: 25px;
+        line-height: 1.25rem;
+        padding: 0px;
+        border-radius: 5px;
+        font-weight:bolder ;
+        font-size: 2.8vw;
+        box-shadow: 1px 1px;
+
+        background-color: #ffd341;
+        border-color: azure;
+        width: 14vw;
+        height: 7vw;
+        max-width: 90px;
+        max-height: 50px;
+        
+    }
+    .btnlevel .btn:hover {
+        background-color: rgb(214, 165, 2);
+        box-shadow: -1px -1px;
+        width: 12vw;
+        height: 7vw;
+    }
+
+    .selectlevelhpscreen h1 {
+        margin-bottom: ;
+        font-size: medium;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .selectlevelhpscreen {
+        display: none;
+    }
+}
