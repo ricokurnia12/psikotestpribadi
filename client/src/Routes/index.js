@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import TesDisc from "../Pages/user/TesDisc";
 import ExpiredLink from "../Pages/ExpiredLink";
 import FinishSubmitTest from "../Pages/FinishSubmitTest";
+import TesMbti from "../Pages/user/TesMbti";
 
 const Router = () => {
     return (
@@ -16,6 +17,7 @@ const Router = () => {
                 path={`/finish_submit_test`}
                 element={<FinishSubmitTest />}
             />
+            <Route path={`/tes_mbti/:token`} element={<TesMbti />} />
         </Routes>
     );
 };

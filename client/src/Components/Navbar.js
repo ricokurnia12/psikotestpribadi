@@ -3,7 +3,7 @@ import LogoGo from "../Assets/logoGo.svg";
 
 export const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
             <div className="container-fluid">
                 <img
                     className="ms-5"
