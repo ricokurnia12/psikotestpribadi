@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* .container{ margin-top: 115px} */
+
+/* #formdatakaryawan {
+    margin-top: 100px;
+} */
+
+#formkaryawancontainer {
+  margin-top: 80px;
+}
+
+#formkaryawancontainer .form-control:focus {
+  border-color: rgb(255, 204, 42);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 5px rgb(255, 204, 42);
+}
+
+#formkaryawancontainer .form-select:focus {
+  border-color: rgb(255, 204, 42);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 5px rgb(255, 204, 42);
+}
+
+#formkaryawancontainer option:hover {
+  background-color: red;
+}
+
+.btn1 {
+  background-color: #bb2d3b;
+  border-radius: 5px;
+  border-color: whitesmoke;
+  padding: 10px 40px;
+  font-weight: bold;
+  color: aliceblue;
+  letter-spacing: 1.5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+
+  /* transition: 1s; */
+}
+
+.btn {
+  margin-top: 50px;
+  cursor: auto;
+}
+
+.btn :hover {
+  background-color: rgba(186, 16, 45);
+  border-color: rgb(232, 64, 64);
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    margin-top: 25px;
+    cursor: auto;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,188 @@
+.containerloginadmin {
+  display: flex;
+}
+
+.formlogin {
+  background-color: #cb243e;
+  width: 50vw;
+  border-radius: 10px;
+  padding: 5% 20%;
+  box-sizing: border-box;
+}
+
+.logologin {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.logologin img {
+  width: 40%;
+}
+
+.loginadmin {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.inputlogin input {
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.inputlogin input:focus {
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border-color: #f3db8e;
+  box-shadow: none;
+}
+
+.btnlogin {
+  justify-content: center;
+  display: flex;
+}
+.btnlogin button {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+  display: flex;
+  background-color: #ffcc2a;
+  color: black;
+  justify-content: center;
+  width: 25%;
+  border-color: #ffcc2a;
+  font-weight: bold;
+
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.btnlogin button:hover {
+  background-color: #e1ac00f9;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+  display: flex;
+
+  color: black;
+  justify-content: center;
+  width: 25%;
+  border-color: #e1ac00f9;
+
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .formlogin {
+    background-color: #cb243e;
+    width: 90vw;
+    border-radius: 10px;
+    padding: 5% 10%;
+    box-sizing: border-box;
+  }
+  .logologin {
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  .logologin img {
+    width: 30%;
+    min-width: 105px;
+    margin-top: 10px;
+  }
+  .loginadmin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .inputlogin input {
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .btnlogin button {
+    margin-top: 3px;
+    margin-bottom: 30px;
+    justify-content: center;
+    display: flex;
+    background-color: #ffcc2a;
+    color: black;
+    justify-content: center;
+    width: 30%;
+    min-width: 40px;
+    max-width: 115px;
+
+    border-color: #ffcc2a;
+    /* font-weight: bold; */
+
+    font-size: 2.2vw;
+
+    border-radius: 10px;
+  }
+
+  .btnlogin button:hover {
+    margin-top: 3px;
+    margin-bottom: 30px;
+    justify-content: center;
+    display: flex;
+    background-color: #e1ac00f9;
+    color: black;
+    justify-content: center;
+    width: 30%;
+    min-width: 40px;
+    max-width: 115px;
+
+    border-color: #e1ac00f9;
+    /* font-weight: bold; */
+
+    font-size: 2.2vw;
+
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .btnlogin button {
+    margin-top: 3px;
+    margin-bottom: 30px;
+    justify-content: center;
+    display: flex;
+    background-color: #ffcc2a;
+    color: black;
+    justify-content: center;
+    width: 30%;
+
+    max-width: 115px;
+
+    border-color: #ffcc2a;
+    /* font-weight: bold; */
+
+    font-size: 4.2vw;
+
+    border-radius: 10px;
+  }
+  .btnlogin button:hover {
+    margin-top: 3px;
+    margin-bottom: 30px;
+    justify-content: center;
+    display: flex;
+    background-color: #e1ac00f9;
+    color: black;
+    justify-content: center;
+    width: 30%;
+
+    max-width: 115px;
+
+    border-color: #e1ac00f9;
+    /* font-weight: bold; */
+
+    font-size: 4.2vw;
+
+    border-radius: 10px;
+  }
+}
