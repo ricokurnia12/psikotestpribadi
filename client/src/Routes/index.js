@@ -8,6 +8,10 @@ import FinishSubmitTest from "../Pages/FinishSubmitTest";
 import Start from "../Pages/user/Start";
 import LevelJabatan from "../Pages/LevelJabatan";
 import TesMbti from "../Pages/user/TesMbti";
+import ListPeserta from "../Pages/admin/ListPeserta";
+import ListKaryawan from "../Pages/admin/ListKaryawan";
+import Sidebar from "../Components/Sidebar";
+import AdminRoute from "./adminRoute";
 
 const Router = () => {
     return (
@@ -19,12 +23,13 @@ const Router = () => {
                 path={`/finish_submit_test`}
                 element={<FinishSubmitTest />}
             />
-            <Route path={"/start"} element={<Start />} />
+            <Route path={"/start/:token"} element={<Start />} />
             <Route
                 path={"/level_jabatan"}
                 element={<LevelJabatan />}
             />
             <Route path={`/tes_mbti/:token`} element={<TesMbti />} />
+            <Route path="/*" element={<AdminRoute />} />
         </Routes>
     );
 };

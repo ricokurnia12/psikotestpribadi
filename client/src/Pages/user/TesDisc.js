@@ -46,6 +46,7 @@ const TesDisc = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const soalDisc = useSelector((state) => state.data.soalDisc);
+
     const {
         register,
         handleSubmit,
@@ -61,20 +62,27 @@ const TesDisc = () => {
         );
     }, [minutes]);
 
-    const onSubmit = (data) => {
-        const result = {
-            NP: [],
-            NK: [],
-        };
-        for (const key in data) {
-            if (key.match("optionP")) {
-                result.NP.push(data[key]);
-            } else if (key.match("optionK")) {
-                result.NK.push(data[key]);
+    const onSubmit = async (data) => {
+        try {
+            const result = {
+                pesertaId: decode(token).pesertaId,
+                NP: [],
+                NK: [],
+            };
+            for (const key in data) {
+                if (key.match("optionP")) {
+                    result.NP.push(data[key]);
+                } else if (key.match("optionK")) {
+                    result.NK.push(data[key]);
+                }
             }
-        }
 
-        console.log(result, "ini result");
+            console.log(result, "ini result");
+            await axios.post(`${url}/submitDisc`, result);
+            navigate(`/finish_submit_test`);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {
@@ -109,6 +117,9 @@ const TesDisc = () => {
                     } else {
                         setMinutes(diff_min_peserta);
                     }
+                }
+                if (peserta.data.JenisTes !== "DISC") {
+                    navigate("/expired_link");
                 }
             } catch (error) {
                 console.log(error);

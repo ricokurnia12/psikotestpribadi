@@ -156,6 +156,9 @@ const TesMbti = () => {
                         setMinutes(diff_min_peserta);
                     }
                 }
+                if (peserta.data.JenisTes !== "MBTI") {
+                    navigate("/expired_link");
+                }
             } catch (error) {
                 console.log(error);
             }
