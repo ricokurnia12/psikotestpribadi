@@ -18,7 +18,10 @@ body {
     width: 100%;
 }
 main {
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
+    display: flex;
+    /* flex-wrap: nowrap; */
+    /* width: 100%; */
 }
 .sidebar {
     background: red;

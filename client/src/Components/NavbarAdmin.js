@@ -1,38 +1,47 @@
 import React from "react";
+import LogoGo from "../Assets/logoGo.svg";
+import { NavLink } from "react-router-dom";
 
 const NavbarAdmin = () => {
     return (
-        <nav
-            className="navbar navbar-expand-lg navbar-dark"
-            style={{ backgroundColor: "red" }}
-        >
+        <nav className="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
             <div className="container-fluid">
-                {/* <a className="navbar-brand" href="#">
-                    Navbar
-                </a> */}
-                {/* <button
+                <NavLink to="/list_peserta">
+                    <img src={LogoGo} alt="Ganesha Operation" />
+                </NavLink>
+                <button
                     className="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
+                    data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
                     <span className="navbar-toggler-icon" />
-                </button> */}
-                <div className="ms-auto" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a
-                                className="nav-link active"
-                                aria-current="page"
-                                href="#"
-                            >
-                                Admin
-                            </a>
-                        </li>
-                    </ul>
+                </button>
+                <div
+                    className="collapse navbar-collapse"
+                    id="navbarNavAltMarkup"
+                >
+                    <div className="navbar-nav ms-auto">
+                        <NavLink
+                            className="nav-link"
+                            aria-current="page"
+                            to="/list_peserta"
+                        >
+                            List Peserta
+                        </NavLink>
+                        <NavLink
+                            className="nav-link"
+                            to="/list_karyawan"
+                        >
+                            List Karyawan
+                        </NavLink>
+                        <a className="nav-link" href="#">
+                            Logout
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>

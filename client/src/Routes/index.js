@@ -1,41 +1,45 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-import Home from '../Pages/Home';
-import TesDisc from '../Pages/user/TesDisc';
-import ExpiredLink from '../Pages/ExpiredLink';
-import FinishSubmitTest from '../Pages/FinishSubmitTest';
-import Start from '../Pages/user/Start';
-import LevelJabatan from '../Pages/LevelJabatan';
-import TesMbti from '../Pages/user/TesMbti';
-import ListPeserta from '../Pages/admin/ListPeserta';
-import ListKaryawan from '../Pages/admin/ListKaryawan';
-import Sidebar from '../Components/Sidebar';
-import AdminRoute from './adminRoute';
-import Loginadmin from '../Pages/LoginAdmin';
-import Form from '../Pages/admin/Form';
-import Pilihjabatan from '../Pages/admin/Pilihjabatan';
+import Home from "../Pages/Home";
+import TesDisc from "../Pages/user/TesDisc";
+import ExpiredLink from "../Pages/ExpiredLink";
+import FinishSubmitTest from "../Pages/FinishSubmitTest";
+import Start from "../Pages/user/Start";
+import LevelJabatan from "../Pages/LevelJabatan";
+import TesMbti from "../Pages/user/TesMbti";
+// import ListPeserta from "../Pages/admin/ListPeserta";
+// import ListKaryawan from "../Pages/admin/ListKaryawan";
+// import Sidebar from "../Components/Sidebar";
+import AdminRoute from "./adminRoute";
+import Loginadmin from "../Pages/LoginAdmin";
+import Form from "../Pages/admin/Form";
+import FormUnit from "../Pages/admin/FormUnit";
 
 const Router = () => {
-  return (
-    <Routes>
-      <Route path={`/`} element={<Home />} />
-      <Route path={`/tes_disc/:token`} element={<TesDisc />} />
-      <Route path={`/expired_link`} element={<ExpiredLink />} />
-      <Route path={`/login_admin`} element={<Loginadmin />} />
-      <Route path={`/form`} element={<Form />} />
-      <Route path={`/level_jabatan`} element={<Pilihjabatan />} />
+    return (
+        <Routes>
+            <Route path={`/`} element={<Home />} />
+            <Route path={`/tes_disc/:token`} element={<TesDisc />} />
+            <Route path={`/expired_link`} element={<ExpiredLink />} />
+            <Route path={`/login_admin`} element={<Loginadmin />} />
+            <Route path={`/form`} element={<Form />} />
+            <Route path={`/form_unit`} element={<FormUnit />} />
+            {/* <Route path={`/level_jabatan`} element={<Pilihjabatan />} /> */}
 
-      <Route
-        path={`/finish_submit_test`}
-        element={<FinishSubmitTest />}
-      />
-      <Route path={'/start/:token'} element={<Start />} />
-      <Route path={'/level_jabatan'} element={<LevelJabatan />} />
-      <Route path={`/tes_mbti/:token`} element={<TesMbti />} />
-      <Route path="/*" element={<AdminRoute />} />
-    </Routes>
-  );
+            <Route
+                path={`/finish_submit_test`}
+                element={<FinishSubmitTest />}
+            />
+            <Route path={"/start/:token"} element={<Start />} />
+            <Route
+                path={"/level_jabatan"}
+                element={<LevelJabatan />}
+            />
+            <Route path={`/tes_mbti/:token`} element={<TesMbti />} />
+            <Route path="/*" element={<AdminRoute />} />
+        </Routes>
+    );
 };
 
 export default Router;
