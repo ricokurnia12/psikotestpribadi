@@ -3,8 +3,15 @@ import "./Form.css";
 import { useForm } from "react-hook-form";
 import Navbar from "../../Components/NavbarAdmin";
 import axios from "axios";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const FormUnit = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [karyawan, setKaryawan] = useState([]);
+    const [disbut, setDisbut] = useState(false);
+    const [date, setDate] = useState("");
+    console.log(date, "ini date");
     const {
         register,
         handleSubmit,
@@ -15,12 +22,46 @@ const FormUnit = () => {
         try {
             await axios.post("http://localhost:5000/createPeserta", {
                 ...data,
-                ProyeksiPenempatan: "dfhsfdshfh",
+                ProyeksiPenempatan: location.state.jabatan,
+                Penempatan: location.state.penempatan,
             });
+            console.log(data, "ini submit");
+            navigate("/list_peserta");
         } catch (error) {
             console.log(error);
         }
     };
+
+    useEffect(() => {
+        if (location.state.karyawanId !== undefined) {
+            const getKaryawanById = async () => {
+                try {
+                    let { data } = await axios.get(
+                        `http://localhost:5000/getKaryawan/${location.state.karyawanId}`
+                    );
+                    const D =
+                        new Date(data.TanggalLahir).getFullYear() +
+                        "-" +
+                        (
+                            "0" +
+                            (new Date(data.TanggalLahir).getMonth() +
+                                1)
+                        ).slice(-2) +
+                        "-" +
+                        (
+                            "0" +
+                            new Date(data.TanggalLahir).getDate()
+                        ).slice(-2);
+                    setKaryawan(data);
+                    setDate(D);
+                    setDisbut(true);
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+            getKaryawanById();
+        }
+    }, [location.state]);
 
     return (
         <div>
@@ -37,7 +78,9 @@ const FormUnit = () => {
                                 type="number"
                                 className="form-control"
                                 id="inputNIK"
+                                defaultValue={karyawan.NIK}
                                 placeholder="Masukan NIK Peserta"
+                                disabled={disbut}
                                 style={{ marginBottom: 10 }}
                                 {...register("NIK", {
                                     required: true,
@@ -71,7 +114,11 @@ const FormUnit = () => {
                                     className="form-control"
                                     placeholder="Masukan No Handphone"
                                     name="pendaftarTelepon"
+                                    disabled={disbut}
                                     id="Ponsel"
+                                    defaultValue={
+                                        karyawan?.PhoneNumber
+                                    }
                                     aria-describedby="inputGroupPrepend"
                                     {...register("PhoneNumber", {
                                         required: true,
@@ -85,7 +132,7 @@ const FormUnit = () => {
                                     role="alert"
                                     style={{ color: "red" }}
                                 >
-                                    Nik tidak boleh kosong
+                                    No Handphone tidak boleh kosong
                                 </p>
                             )}
                         </div>
@@ -97,8 +144,10 @@ const FormUnit = () => {
                                 type="txt"
                                 className="form-control"
                                 id=""
+                                disabled={disbut}
                                 placeholder="Masukan Nama Lengkap Peserta"
                                 style={{ marginBottom: 10 }}
+                                defaultValue={karyawan.NamaLengkap}
                                 {...register("NamaLengkap", {
                                     required: true,
                                 })}
@@ -125,7 +174,9 @@ const FormUnit = () => {
                                 className="form-control"
                                 placeholder="Masukan Tempat Lahir"
                                 id="tempatLahir"
+                                defaultValue={karyawan.TempatLahir}
                                 style={{ marginBottom: 10 }}
+                                disabled={disbut}
                                 {...register("TempatLahir", {
                                     required: true,
                                 })}
@@ -151,6 +202,9 @@ const FormUnit = () => {
                                 type="date"
                                 className="form-control"
                                 id="tanggalLahir"
+                                disabled={disbut}
+                                defaultValue={date}
+                                // defaultValue={"2022-11-14"}
                                 style={{ marginBottom: 10 }}
                                 {...register("TanggalLahir", {
                                     required: true,
@@ -177,6 +231,8 @@ const FormUnit = () => {
                                 type="email"
                                 className="form-control"
                                 id="email"
+                                defaultValue={karyawan.Email}
+                                disabled={disbut}
                                 placeholder="masukan email Peserta"
                                 {...register("Email", {
                                     required: true,

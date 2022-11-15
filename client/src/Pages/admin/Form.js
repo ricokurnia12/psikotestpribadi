@@ -2,39 +2,75 @@ import React, { useEffect, useState } from "react";
 import "./Form.css";
 import { useForm } from "react-hook-form";
 import Navbar from "../../Components/NavbarAdmin";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Form = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     console.log(location, "ini location");
     const [karyawan, setKaryawan] = useState([]);
     const [disbut, setDisbut] = useState(false);
+    const [date, setDate] = useState("");
     console.log(karyawan, "ini karyawan");
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
-    } = useForm();
+    } = useForm({
+        defaultValues: {
+            NIK: karyawan.NIK,
+            PhoneNumber: "",
+            NamaLengkap: "",
+        },
+    });
 
     const onSubmit = async (data) => {
         try {
             await axios.post("http://localhost:5000/createPeserta", {
                 ...data,
-                ProyeksiPenempatan: "dfhsfdshfh",
+                ProyeksiPenempatan: location.state.jabatan,
+                Penempatan: location.state.penempatan,
             });
+            navigate("/list_peserta");
         } catch (error) {
             console.log(error);
         }
     };
 
     useEffect(() => {
-        if (location.state.karyawanId) {
+        reset({
+            NIK: karyawan.NIK,
+            PhoneNumber: karyawan.PhoneNumber,
+            NamaLengkap: karyawan.NamaLengkap,
+            TempatLahir: karyawan.TempatLahir,
+            TanggalLahir: date,
+            Email: karyawan.Email,
+        });
+    }, [karyawan, date]);
+
+    useEffect(() => {
+        if (location.state.karyawanId !== undefined) {
             const getKaryawanById = async () => {
                 try {
                     let { data } = await axios.get(
                         `http://localhost:5000/getKaryawan/${location.state.karyawanId}`
                     );
+                    const D =
+                        new Date(data.TanggalLahir).getFullYear() +
+                        "-" +
+                        (
+                            "0" +
+                            (new Date(data.TanggalLahir).getMonth() +
+                                1)
+                        ).slice(-2) +
+                        "-" +
+                        (
+                            "0" +
+                            new Date(data.TanggalLahir).getDate()
+                        ).slice(-2);
+                    setDate(D);
                     setKaryawan(data);
                     setDisbut(true);
                 } catch (error) {
@@ -43,7 +79,7 @@ const Form = () => {
             };
             getKaryawanById();
         }
-    }, [location.state.karyawanId]);
+    }, [location.state]);
 
     if (!location.state) {
         return <Navigate to="/list_peserta" />;
@@ -62,9 +98,11 @@ const Form = () => {
                                     NIK
                                 </label>
                                 <input
+                                    name="NIK"
                                     type="number"
                                     className="form-control"
-                                    defaultValue={karyawan.NIK}
+                                    // defaultValue={karyawan.NIK}
+                                    // defaultValue={2124124124124}
                                     id="inputNIK"
                                     placeholder="Masukan NIK Peserta"
                                     disabled={disbut}
@@ -100,12 +138,12 @@ const Form = () => {
                                         type="number"
                                         className="form-control"
                                         placeholder="Masukan No Handphone"
-                                        name="pendaftarTelepon"
+                                        name="PhoneNumber"
                                         id="Ponsel"
                                         aria-describedby="inputGroupPrepend"
-                                        defaultValue={
-                                            karyawan.PhoneNumber
-                                        }
+                                        // defaultValue={
+                                        //     karyawan.PhoneNumber
+                                        // }
                                         disabled={disbut}
                                         {...register("PhoneNumber", {
                                             required: true,
@@ -128,12 +166,15 @@ const Form = () => {
                                     Nama Lengkap
                                 </label>
                                 <input
+                                    name="NamaLengkap"
                                     type="txt"
                                     className="form-control"
                                     id=""
-                                    defaultValue={
-                                        karyawan.NamaLengkap
-                                    }
+                                    // defaultValue={
+                                    //     karyawan.NamaLengkap
+                                    //         ? karyawan.NamaLengkap
+                                    //         : null
+                                    // }
                                     placeholder="Masukan Nama Lengkap Peserta"
                                     disabled={disbut}
                                     style={{ marginBottom: 10 }}
@@ -161,12 +202,13 @@ const Form = () => {
                                 </label>
                                 <input
                                     type="txt"
+                                    name="TempatLahir"
                                     className="form-control"
                                     placeholder="Masukan Tempat Lahir"
                                     id="tempatLahir"
-                                    defaultValue={
-                                        karyawan.TempatLahir
-                                    }
+                                    // defaultValue={
+                                    //     karyawan.TempatLahir
+                                    // }
                                     disabled={disbut}
                                     style={{ marginBottom: 10 }}
                                     {...register("TempatLahir", {
@@ -193,13 +235,10 @@ const Form = () => {
                                 </label>
                                 <input
                                     type="date"
+                                    name="TanggalLahir"
                                     className="form-control"
                                     id="tanggalLahir"
-                                    defaultValue={
-                                        new Date(
-                                            karyawan.TanggalLahir
-                                        ).toLocaleDateString()
-                                    }
+                                    // defaultValue={date}
                                     disabled={disbut}
                                     style={{ marginBottom: 10 }}
                                     {...register("TanggalLahir", {
@@ -228,7 +267,8 @@ const Form = () => {
                                     type="email"
                                     className="form-control"
                                     id="email"
-                                    defaultValue={karyawan.Email}
+                                    name="Email"
+                                    // defaultValue={karyawan.Email}
                                     disabled={disbut}
                                     placeholder="masukan email Peserta"
                                     {...register("Email", {
@@ -384,7 +424,7 @@ const Form = () => {
                                     )}
                                 </div>
                             </div>
-                            <div className="btn">
+                            <div className="btn mt-5 mb-5">
                                 <button
                                     type="submit"
                                     className="btn1 "

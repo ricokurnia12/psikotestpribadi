@@ -144,9 +144,7 @@ const LevelJabatan = () => {
                                 disabled={disBut}
                                 onClick={() => {
                                     if (penempatan === "Pusat") {
-                                        if (
-                                            location.state.karyawanId
-                                        ) {
+                                        if (location.state) {
                                             navigate("/form", {
                                                 state: {
                                                     jabatan: value,
@@ -169,9 +167,7 @@ const LevelJabatan = () => {
                                     } else if (
                                         penempatan === "Non Pusat"
                                     ) {
-                                        if (
-                                            location.state.karyawanId
-                                        ) {
+                                        if (location.state) {
                                             navigate("/form_unit", {
                                                 state: {
                                                     jabatan: value,
