@@ -1,0 +1,153 @@
+/* overflow: hidden; */
+/* position: fixed; */
+
+/* <-------Top section--------> */
+.header-hasil {
+    background-color: #cb243e;
+    /* box-sizing: border-box; */
+    padding: 5px 10px;
+    width: 35vw;
+    height: 70px;
+    min-width: 145px;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    margin: auto;
+    /* box-sizing: border-box; */
+}
+
+.header-hasil p {
+    font-weight: 900px;
+    font-size: 1.5vw;
+}
+
+#data-hasil-test {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    display: block;
+}
+
+#data-hasil-test ul {
+    list-style: none;
+    display: table;
+    margin-bottom: 10px;
+}
+
+#data-hasil-test li {
+    display: table-row;
+    margin-bottom: 500px;
+}
+
+#data-hasil-test b {
+    display: table-cell;
+    padding-right: 1em;
+    margin-bottom: 20px;
+}
+
+.penempatan-jabatan {
+    float: right;
+    display: relative;
+    margin-top: -120px;
+    margin-right: 150px;
+}
+
+/* <---end of top section---> */
+
+/* <-----gambaran diri----------> */
+
+.gambaran-karakter {
+    display: grid;
+    background-color: #cb243e;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5.3fr 0.3fr 1fr;
+
+    color: white;
+    grid-column-gap: 18px;
+    grid-row-gap: 10px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.karakter-disc {
+    justify-content: center;
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    font-size: 2vw;
+    align-items: flex-start;
+}
+.most {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.least {
+    grid-area: 2 / 2 / 3 / 3;
+}
+.change {
+    grid-area: 2 / 3 / 3 / 4;
+}
+.assesor1 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.assesor2 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+.assesor3 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+/* ---------end of gambaran diri------------ */
+/* <--------CHART---------------> */
+.chart-result {
+    border-radius: 10px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-bottom: 50px;
+}
+
+.graph-1 {
+    grid-area: 1 / 1 / 2 / 2;
+
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.graph2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.graph3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+/* <----------END OF CHART---------------> */
+
+.deskripsi-kepribadian {
+    background-color: #cb243e;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    padding: 10px 30px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.job-match {
+    background-color: #cb243e;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    padding: 10px 30px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
