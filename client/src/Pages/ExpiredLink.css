@@ -1,16 +1,22 @@
 .expiredlinksvg .exp {
-    width: 90vw;
-    height: 40vw;
-    max-height: 500px;
+  width: 100vw;
+  height: 40vw;
+  /* max-height: 700px; */
 }
 
 @media only screen and (max-width: 800px) {
-    .expiredlinksvg {
-        margin-top: 1;
-    }
-    .expiredlinksvg .exp {
-        width: 850px;
-        height: 800px;
-        margin-left: px;
-    }
+  .expiredlinksvg {
+    overflow: hidden !important;
+  }
+  .expiredlinksvg .exp {
+    height: 1000%;
+    width: 100vw;
+
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(2);
+    /* position: relative; */
+  }
 }

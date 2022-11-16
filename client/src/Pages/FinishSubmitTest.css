@@ -1,83 +1,85 @@
 .finishsubmittest {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .bgg .peoplesubmit {
-    opacity: 50%;
-    height: 70vh;
-    width: 65vh;
+  opacity: 50%;
+  height: 70vh;
+  width: 65vh;
 }
 
 .bgg {
-    text-align: center;
-    margin-top: 45px;
-    position: relative;
+  text-align: center;
+  margin-top: 45px;
+  position: relative;
 }
 
 .Jawabantersimpan {
-    margin-top: 35vh !important;
-    position: relative !important;
+  margin-top: 29vh !important;
+  position: relative !important;
 
-    border-radius: 10px;
-    background-color: #cb243e;
-    margin: auto;
-    /* width: 50vw; */
+  border-radius: 10px;
+  background-color: #cb243e;
+  margin: auto;
+  /* width: 50vw; */
+  min-width: 415px;
+  width: 40vw;
+  height: 40vh;
+  max-width: 600px;
+  max-height: 350px;
+  color: white;
+  text-align: center;
 
-    width: 40vw;
-    height: 40vh;
-    max-width: 600px;
-    max-height: 350px;
-    color: white;
-    text-align: center;
-
-    /* box-sizing: border-box; */
-    padding-top: 10px;
-    min-height: 270px;
+  /* box-sizing: border-box; */
+  padding-top: 10px;
+  min-height: 270px;
 }
 
 .thanks-finishsubmit h6 {
-    font-size: 120%;
+  font-size: 120%;
 }
 
 @media only screen and (max-width: 700px) {
-    .bgg .peoplesubmit {
-        opacity: 50%;
-        height: 60vh;
-        width: 60vw;
-        overflow: hidden;
-    }
+  .bgg .peoplesubmit {
+    opacity: 50%;
+    height: 60vh;
+    width: 60vw;
+    overflow: hidden;
+  }
 
-    .Jawabantersimpan {
-        border-radius: 10px;
-        width: 75vw;
-        height: 10vh;
-        margin-top: 27vh !important;
-        min-height: 210px;
-        font-size: 60%;
+  .Jawabantersimpan {
+    border-radius: 10px;
+    width: 75vw;
+    height: 10vh;
+    margin-top: 27vh !important;
+    min-height: 210px;
+    max-width: 380px;
+    font-size: 60%;
 
-        color: white;
-        /* padding-top: 5vw; */
-        padding: 10px;
-        margin: auto;
-    }
+    color: white;
+    /* padding-top: 5vw; */
+    padding: 10px;
+    margin: auto;
+    min-width: 0px;
+  }
 
-    .thanks-finishsubmit h6 {
-        font-size: 140%;
-        margin-bottom: 0px;
-    }
-    /* min-height: 0px; */
-    .bgg {
-        text-align: center;
-        margin-top: 0px;
-    }
+  .thanks-finishsubmit h6 {
+    font-size: 140%;
+    margin-bottom: 0px;
+  }
+  /* min-height: 0px; */
+  .bgg {
+    text-align: center;
+    margin-top: 0px;
+  }
 }
 
 @media only screen and (max-width: 300px) {
-    .Jawabantersimpan {
-        font-size: 30%;
-    }
+  .Jawabantersimpan {
+    font-size: 30%;
+  }
 
-    .thanks-finishsubmit h2{
-        font-size: 300%;
-    }
+  .thanks-finishsubmit h2 {
+    font-size: 300%;
+  }
 }
