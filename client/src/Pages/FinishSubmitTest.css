@@ -1,54 +1,83 @@
+.finishsubmittest {
+    overflow: hidden;
+}
+
 .bgg .peoplesubmit {
     opacity: 50%;
     height: 70vh;
     width: 65vh;
 }
 
-.Jawabantersimpan {
-    border-radius: 10px;
-    background-color: #cb243e;
-    /* width: 50vw; */
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 40vw;
-    height: 25vw;
-    max-width: 491px;
-    max-height: 308px;
-    color: white;
+.bgg {
     text-align: center;
-    vertical-align:middle;
-    /* box-sizing: border-box; */
-    padding-top: 30px;
-    min-height: 270px;
-
-    
-    
-    
-
-    
+    margin-top: 45px;
+    position: relative;
 }
 
+.Jawabantersimpan {
+    margin-top: 35vh !important;
+    position: relative !important;
+
+    border-radius: 10px;
+    background-color: #cb243e;
+    margin: auto;
+    /* width: 50vw; */
+
+    width: 40vw;
+    height: 40vh;
+    max-width: 600px;
+    max-height: 350px;
+    color: white;
+    text-align: center;
+
+    /* box-sizing: border-box; */
+    padding-top: 10px;
+    min-height: 270px;
+}
+
+.thanks-finishsubmit h6 {
+    font-size: 120%;
+}
 
 @media only screen and (max-width: 700px) {
     .bgg .peoplesubmit {
         opacity: 50%;
-        height: 70vh;
-        width: 50vh;
+        height: 60vh;
+        width: 60vw;
+        overflow: hidden;
     }
 
     .Jawabantersimpan {
         border-radius: 10px;
-        width: 90vw;
-        margin-top: 10px;
+        width: 75vw;
+        height: 10vh;
+        margin-top: 27vh !important;
         min-height: 210px;
+        font-size: 60%;
 
-        
-
-        margin-left: 50px;
-        margin-right: 50px;
         color: white;
         /* padding-top: 5vw; */
-        padding: 20px ;
-        /* min-height: 0px; */
+        padding: 10px;
+        margin: auto;
+    }
+
+    .thanks-finishsubmit h6 {
+        font-size: 140%;
+        margin-bottom: 0px;
+    }
+    /* min-height: 0px; */
+    .bgg {
+        text-align: center;
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .Jawabantersimpan {
+        font-size: 30%;
+    }
+
+    .thanks-finishsubmit h2{
+        font-size: 300%;
     }
 }

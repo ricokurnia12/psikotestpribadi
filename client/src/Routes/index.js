@@ -25,7 +25,7 @@ const Router = () => {
             <Route path={`/login_admin`} element={<Loginadmin />} />
             <Route path={`/form`} element={<Form />} />
             <Route path={`/form_unit`} element={<FormUnit />} />
-            {/* <Route path={`/level_jabatan`} element={<Pilihjabatan />} /> */}
+ 
 
             <Route
                 path={`/finish_submit_test`}
